@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RetroGims</title>
+  <style>
+    body { background: #111; color: #fff; font-family: Arial, sans-serif; margin: 0; }
+    header { background: #b00000; padding: 1rem; text-align: center; font-weight: bold; font-size: 1.4rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 1rem; }
+    .game { background: #1a1a1a; border-radius: 10px; padding: 1rem; text-align: center; }
+    .game img { max-width: 100%; border-radius: 8px; }
+    .game h3 { color: #ff4d4d; margin: 0.5rem 0; }
+    footer { background: #b00000; text-align: center; padding: 0.5rem; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>RetroGims 🎮</header>
+  <main>
+    <div class="grid" id="game-list"></div>
+  </main>
+  <footer>© 2025 RetroGims</footer>
+
+  <script>
+    const games = [
+      { title: "Super Mario Bros", image: "https://placehold.co/300x200?text=Super+Mario", link: "#", year: 1985 },
+      { title: "Sonic The Hedgehog", image: "https://placehold.co/300x200?text=Sonic", link: "#", year: 1991 },
+      { title: "Street Fighter II", image: "https://placehold.co/300x200?text=Street+Fighter", link: "#", year: 1992 },
+    ];
+    const container = document.getElementById("game-list");
+    games.forEach(g => {
+      const card = document.createElement("div");
+      card.className = "game";
+      card.innerHTML = `<img src="${g.image}" alt="${g.title}"><h3>${g.title}</h3><p>${g.year}</p>`;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
